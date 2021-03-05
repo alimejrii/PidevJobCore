@@ -85,7 +85,7 @@
         "version": "v1.0.3"
     },
     "laminas/laminas-code": {
-        "version": "3.4.1"
+        "version": "4.0.0"
     },
     "laminas/laminas-eventmanager": {
         "version": "3.3.0"
@@ -503,9 +503,6 @@
     },
     "symfony/yaml": {
         "version": "v4.4.20"
-    },
-    "symfonycasts/verify-email-bundle": {
-        "version": "v1.2.0"
     },
     "twig/extra-bundle": {
         "version": "v3.3.0"
