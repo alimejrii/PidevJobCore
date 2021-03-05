@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Liste des interviews{% endblock %}
+
+{% block content %}
+    <div class="vertical-space-85"></div>
+    <div class="vertical-space-85"></div>
+    <h2 >Liste des interviews</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>HostId</th>
+                <th>GuestId</th>
+                <th>Time</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for meet in meets %}
+            <tr>
+                <td>{{ meet.id }}</td>
+                <td>{{ meet.title }}</td>
+                <td>{{ meet.hostId }}</td>
+                <td>{{ meet.guestId }}</td>
+                <td>{{ meet.time ? meet.time|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <aside>
+                    <a href="{{ path('meet_show', {'id': meet.id}) }}">voir</a>
+                    </aside>
+                    <aside>
+                    <a href="{{ path('meet_edit', {'id': meet.id}) }}">modifier</a>
+                    </aside>
+                    <aside>
+                    <a href="{{ path('meet_start', {'id': meet.id}) }}">acceder</a>
+                    </aside>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <center><a  href="{{ path('meet_new') }}">Create new</a></center>
+
+{% endblock %}
